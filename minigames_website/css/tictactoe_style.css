@@ -1,0 +1,73 @@
+body {
+    background-color: black;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1,
+h2 {
+    color: #9EF01A;
+    font-family: Verdana, sans-serif;
+}
+
+.button {
+    width: 6em;
+    height: 2em;
+    background-color: black;
+    color: white;
+    border: 3px solid #9EF01A;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.button:hover:not(#select_player) {
+    background-color: #004B23;
+}
+
+#game_grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40em;
+    flex-wrap: wrap;
+    gap: 1em;
+    display: none;
+}
+
+.field {
+    height: 10em;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border: 2px solid #70E000;
+    border-radius: 1em;
+    font-family: Verdana, sans-serif;
+}
+
+.field:hover {
+    background-color: #004B23;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, sans-serif;
+}
+
+a:hover {
+    color: #70E000;
+    cursor: pointer;
+}
+
+p {
+    font-size: 6em;
+    color: white;
+}

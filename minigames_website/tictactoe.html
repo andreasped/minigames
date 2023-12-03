@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/tictactoe_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script src="./js/tictactoe_script.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <a href="./index.html">
+        <div class="home">HOME</div>
+    </a>
+
+    <h1>TIC TAC TOE</h1>
+    <h2 id="choose_player">CHOOSE PLAYER</h2>
+
+    <div id="menu">
+        <select name="player" id="select_player" class="button">
+            <option value="O" selected>O</option>
+            <option value="X">X</option>
+        </select>
+        <button type="submit" class="button" onclick="initGame(), getField()">PLAY</button>
+    </div>
+
+    <div id="game_grid">
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+        <div class="field" onclick="drawPlayerChar(this, getPlayerChar())"></div>
+    </div>
+
+</body>
+
+</html>

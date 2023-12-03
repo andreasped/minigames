@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22em;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.button {
+    height: 6em;
+    width: 6em;
+    background-color: black;
+    border: 2px solid #70E000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 15px 0px #70E000;
+    cursor: pointer;
+}
+
+i {
+    font-size: 2.5em;
+    color: #70E000;
+}
+
+a {
+    text-decoration: none;
+}
