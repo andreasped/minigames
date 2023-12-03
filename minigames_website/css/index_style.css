@@ -6,6 +6,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: #9EF01A;
+    font-family: Verdana, sans-serif;
 }
 
 .button_container {
