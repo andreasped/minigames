@@ -61,62 +61,95 @@ function getEmptyField() {
 
 function checkFieldsForWin() {
     let fields = document.getElementsByClassName("field");
-    let filledFields = Array.from(fields).filter(field => field.innerHTML != "");
     let playerChar = "<p>" + getPlayerChar() + "</p>";
-    let opponentChar = "<p>" + getOpponentChar(playerChar) + "</p>";
+    let opponentChar = "<p>" + getOpponentChar(getPlayerChar()) + "</p>";
 
-    // Temporary solution
-    if (filledFields[0].innerHTML === playerChar && filledFields[1].innerHTML === playerChar && filledFields[2].innerHTML === playerChar
-        || filledFields[0].innerHTML === opponentChar && filledFields[1].innerHTML === opponentChar && filledFields[2].innerHTML === opponentChar) {
-        return gameWin();
+    // Temporary solution, checking both player and opponent for every possible win
+    if (fields[0].innerHTML === playerChar && fields[1].innerHTML === playerChar && fields[2].innerHTML === playerChar) {
+        return gameWin(playerChar);
     }
-    if (filledFields[3].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[5].innerHTML === playerChar
-        || filledFields[3].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[5].innerHTML === opponentChar) {
-        return gameWin();
+    if (fields[0].innerHTML === opponentChar && fields[1].innerHTML === opponentChar && fields[2].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
     }
-    if (filledFields[6].innerHTML === playerChar && filledFields[7].innerHTML === playerChar && filledFields[8].innerHTML === playerChar
-        || filledFields[6].innerHTML === opponentChar && filledFields[7].innerHTML === opponentChar && filledFields[8].innerHTML === opponentChar) {
-        return gameWin();
+
+    if (fields[3].innerHTML === playerChar && fields[4].innerHTML === playerChar && fields[5].innerHTML === playerChar) {
+        return gameWin(playerChar);
     }
-    if (filledFields[0].innerHTML === playerChar && filledFields[3].innerHTML === playerChar && filledFields[6].innerHTML === playerChar
-        || filledFields[0].innerHTML === opponentChar && filledFields[3].innerHTML === opponentChar && filledFields[6].innerHTML === opponentChar) {
-        return gameWin();
+    if (fields[3].innerHTML === opponentChar && fields[4].innerHTML === opponentChar && fields[5].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
     }
-    if (filledFields[1].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[7].innerHTML === playerChar
-        || filledFields[1].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[7].innerHTML === opponentChar) {
-        return gameWin();
+
+    if (fields[6].innerHTML === playerChar && fields[7].innerHTML === playerChar && fields[8].innerHTML === playerChar) {
+        return gameWin(playerChar);
     }
-    if (filledFields[2].innerHTML === playerChar && filledFields[5].innerHTML === playerChar && filledFields[8].innerHTML === playerChar
-        || filledFields[2].innerHTML === opponentChar && filledFields[5].innerHTML === opponentChar && filledFields[8].innerHTML === opponentChar) {
-        return gameWin();
+    if (fields[6].innerHTML === opponentChar && fields[7].innerHTML === opponentChar && fields[8].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
     }
-    if (filledFields[0].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[8].innerHTML === playerChar
-        || filledFields[0].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[8].innerHTML === opponentChar) {
-        return gameWin();
+
+    if (fields[0].innerHTML === playerChar && fields[3].innerHTML === playerChar && fields[6].innerHTML === playerChar) {
+        return gameWin(playerChar);
     }
-    if (filledFields[2].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[6].innerHTML === playerChar
-        || filledFields[2].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[6].innerHTML === opponentChar) {
-        return gameWin();
+    if (fields[0].innerHTML === opponentChar && fields[3].innerHTML === opponentChar && fields[6].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
     }
-    else {
-        return null;
+
+    if (fields[1].innerHTML === playerChar && fields[4].innerHTML === playerChar && fields[7].innerHTML === playerChar) {
+        return gameWin(playerChar);
     }
+    if (fields[1].innerHTML === opponentChar && fields[4].innerHTML === opponentChar && fields[7].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
+    }
+
+    if (fields[2].innerHTML === playerChar && fields[5].innerHTML === playerChar && fields[8].innerHTML === playerChar) {
+        return gameWin(playerChar);
+    }
+    if (fields[2].innerHTML === opponentChar && fields[5].innerHTML === opponentChar && fields[8].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
+    }
+
+    if (fields[0].innerHTML === playerChar && fields[4].innerHTML === playerChar && fields[8].innerHTML === playerChar) {
+        return gameWin(playerChar);
+    }
+    if (fields[0].innerHTML === opponentChar && fields[4].innerHTML === opponentChar && fields[8].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
+    }
+
+    if (fields[2].innerHTML === playerChar && fields[4].innerHTML === playerChar && fields[6].innerHTML === playerChar) {
+        return gameWin(playerChar);
+    }
+    if (fields[2].innerHTML === opponentChar && fields[4].innerHTML === opponentChar && fields[6].innerHTML === opponentChar) {
+        return gameWin(opponentChar);
+    }
+
+    else { return null; }
+}
+
+
+function removeDrawFunction() {
+    let fields = document.getElementsByClassName("field");
+    Array.from(fields).forEach(field => {
+        field.removeAttribute("onclick");
+    });
 }
 
 
 function gameOver() {
+    removeDrawFunction()
     let choose_player = document.getElementById("choose_player");
     choose_player.innerHTML = "GAME OVER";
     choose_player.style.color = "#BC4749";
 }
 
 
-function gameWin() {
+function gameWin(player) {
+    removeDrawFunction()
     let choose_player = document.getElementById("choose_player");
-    let playerChar = getPlayerChar();
-    // if (playerChar ) {
-
-    // }
-    choose_player.innerHTML = "PLAYER " + "<span>" + playerChar + "</span>" + " WINS!";
-    choose_player.style.color = "#70E000";
+    if (player === "<p>" + getPlayerChar() + "</p>") {
+        choose_player.innerHTML = "YOU WIN!";
+        choose_player.style.color = "#70E000";
+    }
+    else if (player === "<p>" + getOpponentChar(getPlayerChar()) + "</p>") {
+        choose_player.innerHTML = "YOU LOSE!";
+        choose_player.style.color = "#BC4749";
+    }
 }
