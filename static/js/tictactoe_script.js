@@ -52,6 +52,7 @@ function getEmptyField() {
         return null;
     }
 
+    // Random index (field) to draw opponent player
     let randomIndex = Math.floor(Math.random() * emptyFields.length);
 
     return emptyFields[randomIndex];
@@ -61,40 +62,40 @@ function getEmptyField() {
 function checkFieldsForWin() {
     let fields = document.getElementsByClassName("field");
     let filledFields = Array.from(fields).filter(field => field.innerHTML != "");
-    let playerChar = getPlayerChar();
-    let opponentChar = getOpponentChar(playerChar);
+    let playerChar = "<p>" + getPlayerChar() + "</p>";
+    let opponentChar = "<p>" + getOpponentChar(playerChar) + "</p>";
 
     // Temporary solution
-    if (filledFields[0].innerHTML === "<p>" + playerChar + "</p>" && filledFields[1].innerHTML === "<p>" + playerChar + "</p>" && filledFields[2].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[0].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[1].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[2].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[0].innerHTML === playerChar && filledFields[1].innerHTML === playerChar && filledFields[2].innerHTML === playerChar
+        || filledFields[0].innerHTML === opponentChar && filledFields[1].innerHTML === opponentChar && filledFields[2].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[3].innerHTML === "<p>" + playerChar + "</p>" && filledFields[4].innerHTML === "<p>" + playerChar + "</p>" && filledFields[5].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[3].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[4].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[5].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[3].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[5].innerHTML === playerChar
+        || filledFields[3].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[5].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[6].innerHTML === "<p>" + playerChar + "</p>" && filledFields[7].innerHTML === "<p>" + playerChar + "</p>" && filledFields[8].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[6].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[7].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[8].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[6].innerHTML === playerChar && filledFields[7].innerHTML === playerChar && filledFields[8].innerHTML === playerChar
+        || filledFields[6].innerHTML === opponentChar && filledFields[7].innerHTML === opponentChar && filledFields[8].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[0].innerHTML === "<p>" + playerChar + "</p>" && filledFields[3].innerHTML === "<p>" + playerChar + "</p>" && filledFields[6].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[0].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[3].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[6].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[0].innerHTML === playerChar && filledFields[3].innerHTML === playerChar && filledFields[6].innerHTML === playerChar
+        || filledFields[0].innerHTML === opponentChar && filledFields[3].innerHTML === opponentChar && filledFields[6].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[1].innerHTML === "<p>" + playerChar + "</p>" && filledFields[4].innerHTML === "<p>" + playerChar + "</p>" && filledFields[7].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[1].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[4].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[7].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[1].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[7].innerHTML === playerChar
+        || filledFields[1].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[7].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[2].innerHTML === "<p>" + playerChar + "</p>" && filledFields[5].innerHTML === "<p>" + playerChar + "</p>" && filledFields[8].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[2].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[5].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[8].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[2].innerHTML === playerChar && filledFields[5].innerHTML === playerChar && filledFields[8].innerHTML === playerChar
+        || filledFields[2].innerHTML === opponentChar && filledFields[5].innerHTML === opponentChar && filledFields[8].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[0].innerHTML === "<p>" + playerChar + "</p>" && filledFields[4].innerHTML === "<p>" + playerChar + "</p>" && filledFields[8].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[0].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[4].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[8].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[0].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[8].innerHTML === playerChar
+        || filledFields[0].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[8].innerHTML === opponentChar) {
         return gameWin();
     }
-    if (filledFields[2].innerHTML === "<p>" + playerChar + "</p>" && filledFields[4].innerHTML === "<p>" + playerChar + "</p>" && filledFields[6].innerHTML === "<p>" + playerChar + "</p>"
-        || filledFields[2].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[4].innerHTML === "<p>" + opponentChar + "</p>" && filledFields[6].innerHTML === "<p>" + opponentChar + "</p>") {
+    if (filledFields[2].innerHTML === playerChar && filledFields[4].innerHTML === playerChar && filledFields[6].innerHTML === playerChar
+        || filledFields[2].innerHTML === opponentChar && filledFields[4].innerHTML === opponentChar && filledFields[6].innerHTML === opponentChar) {
         return gameWin();
     }
     else {
@@ -112,6 +113,10 @@ function gameOver() {
 
 function gameWin() {
     let choose_player = document.getElementById("choose_player");
-    choose_player.innerHTML = "PLAYER " + "<span>" + getPlayerChar() + "</span>" + " WINS!";
+    let playerChar = getPlayerChar();
+    // if (playerChar ) {
+
+    // }
+    choose_player.innerHTML = "PLAYER " + "<span>" + playerChar + "</span>" + " WINS!";
     choose_player.style.color = "#70E000";
 }

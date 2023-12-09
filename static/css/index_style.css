@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 body {
     background-color: black;
     height: 100%;
@@ -7,11 +11,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-h1 {
-    color: #9EF01A;
-    font-family: Verdana, sans-serif;
 }
 
 .button_container {
@@ -46,4 +45,9 @@ i {
 
 a {
     text-decoration: none;
+}
+
+#display_game {
+    color: #9EF01A;
+    font-family: Verdana, sans-serif;
 }

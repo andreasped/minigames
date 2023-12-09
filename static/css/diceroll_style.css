@@ -20,51 +20,25 @@ h2 {
 }
 
 .button {
+    height: 6em;
     width: 6em;
-    height: 2em;
-    font-family: Verdana, sans-serif;
     background-color: black;
-    color: white;
-    border: 3px solid #9EF01A;
-    border-radius: 0.5em;
-    cursor: pointer;
+    border: 2px solid #70E000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
 }
 
-.button:hover:not(#select_player) {
+.button:hover {
     background-color: #004B23;
     box-shadow: 0px 0px 15px 0px #70E000;
     cursor: pointer;
 }
 
-#game_grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40em;
-    flex-wrap: wrap;
-    gap: 1em;
-    display: none;
-}
-
-.field {
-    height: 10em;
-    width: 10em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    border: 2px solid #70E000;
-    border-radius: 1em;
-    font-family: Verdana, sans-serif;
-}
-
-.field:hover {
-    background-color: #004B23;
-    cursor: pointer;
-}
-
 a {
     text-decoration: none;
+    font-size: 2.5em;
     color: white;
     font-family: Verdana, sans-serif;
 }
@@ -74,15 +48,11 @@ a:hover {
     cursor: pointer;
 }
 
-p {
-    font-size: 6em;
-    color: white;
+.button i {
+    font-size: 2.5em;
+    color: #70E000;
 }
 
 span {
     color: white;
-}
-
-i {
-    font-size: 2.5em;
 }
