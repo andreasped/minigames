@@ -1,7 +1,6 @@
-### Website with minigames
+## Website with minigames
+### To be done with vanilla HTML, CSS and JavaScript
 
-#### To be done with vanilla HTML, CSS and JavaScript
-
-### Current games
+## Current games
 - Tic Tac Toe
 - Dice Roll
